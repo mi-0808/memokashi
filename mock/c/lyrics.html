@@ -1,0 +1,42 @@
+<!doctype html><html lang="ja"><head><meta charset="utf-8"><title>T</title><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="../base.css"><link rel="stylesheet" href="style.css">
+<style>
+.seg{flex:none;display:flex;gap:8px;padding:12px 18px;background:var(--bg)}
+.seg button{flex:1;height:44px;border-radius:12px;border:3px solid var(--ink);background:#fff;font-size:13px;font-weight:800}
+.seg button.on{background:var(--main);color:#fff;box-shadow:3px 3px 0 var(--ink)}
+.blk{margin:6px 18px 0;padding:12px 12px 6px;border-radius:14px;background:#fff}
+.blk .label{margin:0 0 8px 2px}
+.ln{display:flex;align-items:center;gap:10px;padding:10px 6px}
+.ln+.ln{border-top:2px dashed #E8D5C6}
+.ln .gr{color:#B49480;font-size:14px;flex:none}
+.ln .tx{flex:1;font-size:15px;line-height:1.55}
+.ln .src{display:block;font-size:10px;font-weight:800;color:var(--sub-ink);margin-top:3px}
+.ln .mo{flex:none;min-width:40px;text-align:center;font-size:11px;font-weight:800;border:2px solid var(--ink);border-radius:9px;padding:3px 6px;background:var(--bg)}
+.ln.pair .mo{background:var(--main);color:#fff}
+.rhy{background:var(--sub);border-bottom:3px solid var(--main);padding:0 2px;font-weight:800}
+.note{margin:14px 18px 24px;font-size:11px;font-weight:800;color:var(--sub-ink);line-height:1.8}
+.note i{display:inline-block;width:20px;height:11px;background:var(--sub);border-bottom:3px solid var(--main);vertical-align:-3px;margin-right:4px}
+.foot{flex:none;padding:12px 18px 26px;background:var(--bg);border-top:3px solid var(--ink);display:flex;gap:10px}
+.foot .btn{flex:1}
+</style></head><body>
+<div class="screen">
+  <div class="hd"><div class="statusbar"><span>9:41</span><span class="right"><i></i><i style="width:10px"></i></span></div><div class="ttl"><div style="display:flex;align-items:center;gap:4px"><button class="back tap">‹</button>
+    <div><h1>作詞</h1><div class="sub">きみのこと ／ 10行 ／ 韻3組</div></div></div><span class="sticker">自動で並べる</span></div></div>
+  <div class="seg"><button class="on">1番</button><button>2番</button><button>サビ</button></div>
+  <div class="body" style="padding-bottom:6px">
+    <div class="blk box"><span class="label">1番</span>
+      <div class="ln pair"><span class="gr">⋮⋮</span><span class="tx">帰り道 信号が青に<span class="src">2026.11.16</span></span><span class="mo">12</span></div>
+      <div class="ln pair"><span class="gr">⋮⋮</span><span class="tx">変わるのを待って<span class="rhy">いた</span><span class="src">2026.11.16</span></span><span class="mo">12</span></div>
+      <div class="ln"><span class="gr">⋮⋮</span><span class="tx">なんでもない時間が<span class="src">2026.11.16</span></span><span class="mo">11</span></div>
+      <div class="ln"><span class="gr">⋮⋮</span><span class="tx">ずっと残って<span class="rhy">いた</span><span class="src">2026.11.16</span></span><span class="mo">11</span></div></div>
+    <div class="blk box" style="margin-top:16px"><span class="label">サビ</span>
+      <div class="ln pair"><span class="gr">⋮⋮</span><span class="tx">名前を呼ばれただけで<span class="src">2026.11.09</span></span><span class="mo">13</span></div>
+      <div class="ln pair"><span class="gr">⋮⋮</span><span class="tx">心臓がうるさくな<span class="rhy">るよ</span><span class="src">2026.11.09</span></span><span class="mo">13</span></div>
+      <div class="ln"><span class="gr">⋮⋮</span><span class="tx">好きって言葉はまだ<span class="src">2026.11.09</span></span><span class="mo">12</span></div>
+      <div class="ln"><span class="gr">⋮⋮</span><span class="tx">ポケットの中にあ<span class="rhy">るよ</span><span class="src">2026.11.09</span></span><span class="mo">13</span></div></div>
+    <div class="blk box" style="margin-top:16px"><span class="label">2番</span>
+      <div class="ln"><span class="gr">⋮⋮</span><span class="tx">改札の前で手をふった<span class="src">2026.10.28</span></span><span class="mo">13</span></div>
+      <div class="ln"><span class="gr">⋮⋮</span><span class="tx">そのあと少しだけ泣いた<span class="src">2026.10.28</span></span><span class="mo">14</span></div></div>
+    <p class="note"><i></i>行末の母音がそろう行（韻の候補）／ オレンジの音数は対になる行</p>
+  </div>
+  <div class="foot"><button class="btn alt tap" style="flex:0 0 110px">行を足す</button><button class="btn tap">ジャケットへ</button></div>
+</div></body></html>

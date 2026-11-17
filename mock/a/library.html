@@ -1,0 +1,60 @@
+<!doctype html><html lang="ja"><head><meta charset="utf-8"><title>T</title><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="../base.css"><link rel="stylesheet" href="style.css">
+<style>
+.body{padding:0 0 10px}
+.sec{padding:18px 22px 4px;display:flex;align-items:baseline;justify-content:space-between}
+.sec h2{font-size:16px;font-weight:800}
+.sec span{font-size:12px;font-weight:800;color:var(--main)}
+.row{display:flex;gap:14px;overflow:hidden;padding:10px 22px 4px}
+.card{width:136px;flex:none}
+.card .jk{width:136px;height:136px;border-radius:14px;box-shadow:0 4px 14px rgba(138,90,60,.16)}
+.card h3{font-size:13px;font-weight:800;margin-top:8px;line-height:1.35}
+.card p{font-size:11px;color:var(--sub-ink);font-weight:700;margin-top:2px}
+.fl{margin:8px 22px 0;padding:14px 16px;border-radius:16px}
+.fl+.fl{margin-top:10px}
+.fl .t{display:flex;align-items:center;justify-content:space-between;font-size:14px;font-weight:800}
+.fl .t em{font-style:normal;font-size:11px;color:var(--sub-ink)}
+.bar{height:8px;border-radius:4px;background:#F3E4D8;margin-top:10px;overflow:hidden}
+.bar i{display:block;height:100%;background:var(--main);border-radius:4px}
+.fab{position:absolute;left:50%;transform:translateX(-50%);bottom:84px;height:52px;padding:0 24px;border-radius:26px;
+  background:var(--main);color:#fff;font-weight:800;font-size:15px;display:flex;align-items:center;gap:8px;
+  box-shadow:0 8px 20px rgba(255,122,47,.38)}
+.alb{display:grid;grid-template-columns:1fr 1fr;gap:14px;padding:10px 22px 80px}
+.alb .jk{width:100%;aspect-ratio:1;border-radius:14px}
+</style></head><body>
+<div class="screen">
+  <div class="statusbar"><span>9:41</span><span class="right"><i></i><i style="width:10px"></i></span></div>
+  <div class="hd"><h1 class="logotype">メモ<b>歌詞</b></h1><button class="tap folder" style="font-size:13px;font-weight:800;color:var(--sub-ink)">14日連続</button></div>
+  <div class="body">
+    <div class="sec"><h2>最近の曲</h2><span>すべて見る</span></div>
+    <div class="row">
+      <div class="card"><div class="jk" style="background:#FF7A2F">
+        <span style="width:84px;height:84px;border-radius:50%;background:#FFD9BF;left:26px;top:20px"></span>
+        <span style="width:136px;height:16px;background:#FFF6EE;left:0;bottom:26px"></span></div>
+        <h3>青信号を待つ時間</h3><p>12メモ ／ 2026.11</p></div>
+      <div class="card"><div class="jk" style="background:#3A2418">
+        <span style="width:0;height:0;border-left:44px solid transparent;border-right:44px solid transparent;border-bottom:72px solid #FF7A2F;left:24px;top:34px"></span></div>
+        <h3>傘をたたむ音</h3><p>9メモ ／ 2026.10</p></div>
+      <div class="card"><div class="jk" style="background:#FFD9BF">
+        <span style="width:60px;height:60px;background:#FF7A2F;left:16px;top:16px;border-radius:14px"></span>
+        <span style="width:60px;height:60px;background:#8A5A3C;right:16px;bottom:16px;border-radius:50%"></span></div>
+        <h3>まだ言えてない</h3><p>7メモ ／ 2026.10</p></div>
+    </div>
+    <div class="sec"><h2>制作中のフォルダ</h2></div>
+    <div class="fl paper"><div class="t"><span>きみのこと</span><em>18メモ ／ 236音</em></div><div class="bar"><i style="width:72%"></i></div></div>
+    <div class="fl paper"><div class="t"><span>夏のバイト終わり</span><em>6メモ ／ 74音</em></div><div class="bar"><i style="width:28%"></i></div></div>
+    <div class="sec"><h2>アルバム</h2></div>
+    <div class="alb">
+      <div><div class="jk" style="background:#FFF6EE;box-shadow:inset 0 0 0 3px #FF7A2F">
+        <span style="width:50%;height:100%;background:#FF7A2F;left:0;top:0"></span>
+        <span style="width:34px;height:34px;border-radius:50%;background:#FFF6EE;left:33px;top:50%;margin-top:-17px"></span></div>
+        <h3 style="font-size:13px;font-weight:800;margin-top:8px">片想いの記録</h3></div>
+      <div><div class="jk" style="background:#8A5A3C">
+        <span style="width:100%;height:14px;background:#FFD9BF;left:0;top:40px"></span>
+        <span style="width:100%;height:14px;background:#FF7A2F;left:0;top:70px"></span>
+        <span style="width:100%;height:14px;background:#FFD9BF;left:0;top:100px"></span></div>
+        <h3 style="font-size:13px;font-weight:800;margin-top:8px">二年生の春</h3></div>
+    </div>
+  </div>
+  <button class="fab tap">✎ 書く</button>
+  <nav class="tabs"><a class="on"><span class="dot"></span>ライブラリ</a><a><span class="dot d2"></span>フォルダ</a><a><span class="dot d3"></span>カレンダー</a><a><span class="dot" style="border-radius:11px"></span>設定</a></nav>
+</div></body></html>

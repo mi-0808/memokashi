@@ -1,0 +1,11 @@
+/* ヘッダー統一: オレンジ地＋こげ茶文字＋下に3pxの濃い線。タイトル25px。B案の画面にも上書きで適用 */
+.top{background:var(--main)!important;color:var(--ink)!important;border-bottom:3px solid var(--ink)!important;padding:0 20px 16px!important}
+.top .statusbar{color:var(--ink)!important;padding:0!important}
+.top h1{color:var(--ink)!important;font-size:25px!important}
+.top .sub{color:var(--ink)!important;opacity:1!important}
+.top .back{color:var(--ink)!important}
+.top .chip{background:var(--bg)!important;color:var(--ink)!important;border:2px solid var(--ink)!important;height:44px!important;white-space:nowrap}
+.top .stats div{background:rgba(255,246,238,.55)!important;color:var(--ink)!important}
+.top .stats span{color:var(--ink)!important;opacity:1!important}
+.top .seg button{background:var(--bg)!important;color:var(--ink)!important;border:2px solid var(--ink)!important}
+.top .seg button.on{background:var(--ink)!important;color:var(--bg)!important}

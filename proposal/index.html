@@ -1,0 +1,299 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>メモ歌詞 企画書</title>
+<link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--main:#FF7A2F;--sub:#FFD9BF;--bg:#FFF6EE;--ink:#3A2418;--soft:#8A5A3C;--line:#EBD6C5}
+@page{size:A4;margin:0}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+body{font-family:"M PLUS Rounded 1c",sans-serif;color:var(--ink);background:#d9cfc6;font-size:10pt;line-height:1.8}
+@media print{body{background:none}.page{margin:0!important;box-shadow:none!important}}
+.page{width:210mm;height:297mm;position:relative;overflow:hidden;background:var(--bg);margin:10mm auto;box-shadow:0 2px 14px rgba(58,36,24,.2);break-after:page;page-break-after:always}
+.page:last-child{break-after:auto;page-break-after:auto}
+/* 見る系ヘッダー: オレンジ＋こげ茶の下線（アプリ内ヘッダーと同じ規則） */
+.ph{background:var(--main);border-bottom:1mm solid var(--ink);padding:13mm 16mm 7mm;display:flex;align-items:flex-end;justify-content:space-between}
+.ph h2{font-size:21pt;font-weight:800;line-height:1.3}
+.ph .no{font-size:9pt;font-weight:800;border:.6mm solid var(--ink);background:var(--bg);border-radius:6mm;padding:.5mm 4mm;line-height:1.7}
+.pb{padding:9mm 16mm}
+.logotype{font-weight:800;letter-spacing:-.01em}.logotype b{color:var(--main)}
+.label{display:inline-block;font-size:8.5pt;font-weight:800;letter-spacing:.08em;background:var(--main);padding:.3mm 3mm;border-radius:2mm;line-height:1.8}
+.card{background:#fff;border:.6mm solid var(--line);border-radius:4mm;padding:4.5mm 5mm}
+.card h3{font-size:11pt;font-weight:800;margin-bottom:1.5mm}
+.card p,.card li{font-size:9.5pt;line-height:1.85}
+.card ul{list-style:none}
+.card li{padding-left:4mm;position:relative}
+.card li::before{content:"";position:absolute;left:0;top:3.2mm;width:1.6mm;height:1.6mm;border-radius:50%;background:var(--main)}
+.sec{margin-top:7mm}.sec:first-child{margin-top:0}
+.sec>.label{margin-bottom:2.5mm}
+.lead{font-size:12.5pt;font-weight:800;line-height:1.7}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:4mm}
+.num{display:inline-block;min-width:8mm;text-align:center;font-size:9pt;font-weight:800;border:.6mm solid var(--ink);border-radius:2.4mm;padding:0 2mm;background:var(--bg);line-height:1.8}
+.num.hit{background:var(--main)}
+.btnlike{display:inline-block;font-weight:800;border:.6mm solid var(--ink);border-radius:3.5mm;background:var(--main);box-shadow:0 1mm 0 var(--ink);padding:1.2mm 5mm;font-size:10pt}
+/* 表紙: 黒ヘッダー規則。黒地ならロゴの「歌詞」がオレンジのまま読める */
+.cover{background:var(--ink);color:var(--bg)}
+.cover .top{padding:20mm 18mm 0}
+.cover .mark{width:22mm;height:22mm}
+.cover h1{font-size:46pt;line-height:1.15;margin-top:9mm}
+.cover .tag{font-size:15pt;font-weight:800;margin-top:6mm;color:var(--sub);line-height:1.7}
+.cover .meta{position:absolute;left:18mm;top:104mm;display:flex;gap:3mm}
+.cover .meta span{border:.6mm solid var(--sub);color:var(--sub);border-radius:6mm;padding:.5mm 4mm;font-size:9pt;font-weight:800}
+.cover .bar{position:absolute;left:0;right:0;top:118mm;height:1.2mm;background:var(--main)}
+.cover .shots{position:absolute;left:18mm;right:18mm;bottom:0;display:flex;gap:6mm;justify-content:space-between;align-items:flex-end}
+.cover .shots img{width:50mm;display:block;border:.7mm solid var(--sub);border-bottom:0;border-radius:7mm 7mm 0 0}
+.cover .shots img:nth-child(2){margin-bottom:0;transform:translateY(-12mm)}
+.cover .foot{position:absolute;left:18mm;top:128mm;font-size:10pt;color:var(--sub);font-weight:700;line-height:1.9}
+/* 図 */
+.shot{display:block;width:100%;border:.6mm solid var(--ink);border-radius:5mm;box-shadow:0 1mm 0 var(--ink)}
+.strip{display:grid;grid-template-columns:repeat(6,1fr);gap:2.6mm}
+.strip figcaption{font-size:7.5pt;font-weight:800;color:var(--soft);text-align:center;margin-top:2mm;line-height:1.4}
+.flow{display:flex;flex-wrap:wrap;align-items:center;gap:1.6mm}
+.flow span{font-size:8.5pt;font-weight:800;border:.6mm solid var(--ink);border-radius:5mm;padding:.2mm 3mm;background:#fff}
+.flow i{font-style:normal;color:var(--soft);font-weight:800;font-size:9pt}
+.steps{counter-reset:s}
+.step{display:flex;gap:4mm;align-items:flex-start;padding:3.5mm 0}
+.step+.step{border-top:.5mm dashed var(--line)}
+.step .n{flex:none;width:9mm;height:9mm;border-radius:50%;background:var(--main);border:.6mm solid var(--ink);font-weight:800;text-align:center;line-height:8mm;font-size:11pt}
+.step b{display:block;font-size:10.5pt}
+.rhy{background:var(--sub);border-bottom:.8mm solid var(--main);padding:0 .6mm;font-weight:800}
+/* 色見本 */
+.sw{display:grid;grid-template-columns:repeat(5,1fr);gap:3mm}
+.sw div{border:.6mm solid var(--ink);border-radius:4mm;overflow:hidden;background:#fff}
+.sw i{display:block;height:16mm}
+.sw p{font-size:8pt;font-weight:800;padding:1.2mm 2mm;line-height:1.5}
+.sw small{display:block;font-weight:700;color:var(--soft);font-size:7.5pt}
+table{width:100%;border-collapse:separate;border-spacing:0 2mm}
+td{background:#fff;font-size:9.5pt;padding:2.4mm 4mm;vertical-align:top}
+td:first-child{width:34mm;font-weight:800;background:var(--sub);border-radius:3mm 0 0 3mm;white-space:nowrap}
+td:last-child{border-radius:0 3mm 3mm 0}
+.tight .card{padding:2.2mm 4.5mm}.tight .card h3{margin-bottom:.4mm}.tight .card p,.tight .card li{line-height:1.6}.tight .sec{margin-top:4mm}.tight .pb{padding-top:6mm;padding-bottom:4mm}.tight table{border-spacing:0 1.2mm}.tight td{padding:1.5mm 4mm}
+.note{font-size:8.5pt;color:var(--soft);font-weight:700;line-height:1.7}
+</style></head>
+<body>
+
+<!-- 1 表紙 -->
+<section class="page cover">
+  <div class="top">
+    <img class="mark" src="../assets/logo.svg" alt="">
+    <h1 class="logotype">メモ<b>歌詞</b></h1>
+    <p class="tag">ふと浮かんだ記憶のかけらを、<br>あなただけの一曲にするアプリ</p>
+  </div>
+  <div class="meta"><span>企画書</span><span>SEIKA AWARD 2027</span><span>テーマ「記憶」</span></div>
+  <div class="bar"></div>
+  <p class="foot">メモ歌詞<br>思いついたメモが、一曲の歌詞になる</p>
+  <div class="shots"><img src="img/write.png" alt=""><img src="img/library.png" alt=""><img src="img/lyrics.png" alt=""></div>
+</section>
+
+<!-- 2 プロダクト・コンセプト・概要・背景 -->
+<section class="page">
+  <header class="ph"><h2>メモ歌詞とは</h2><span class="no">02 / 08</span></header>
+  <div class="pb">
+    <div class="sec"><span class="label">プロダクト名</span>
+      <div class="card"><p class="lead">メモ歌詞</p>
+      <p>「メモ」と「歌詞」を重ねた名前です。思いついた言葉をメモのように書きためると、それが歌詞になる、という作品の流れをそのまま名前にしています。</p></div></div>
+    <div class="sec"><span class="label">コンセプト</span>
+      <div class="card" style="background:var(--sub);border-color:var(--ink)"><p class="lead">ふと浮かんだ記憶のかけらを、あなただけの一曲にするアプリです。</p></div></div>
+    <div class="sec"><span class="label">概要</span>
+      <div class="card"><p>思いついた言葉をメモのように書きためると、アプリが音数や韻をもとに1番・2番・サビへ並べ、歌詞の形に整えます。完成した曲はCDジャケットとしてライブラリに並び、アルバムのように見返すことができます。継ぎはぎのまま終わっていたメモを一曲にまとめ、音楽と記憶の結びつきを形にします。</p></div></div>
+    <div class="sec"><span class="label">制作の背景</span>
+      <div class="card"><p>私は音楽が好きで、浮かんだ言葉をメモに歌詞として書きためていました。しかし、書いた時点の記憶はすぐに薄れてしまい、メモは継ぎはぎのまま一曲として完成しませんでした。記憶は「その瞬間」にしか言葉にならないのに、それを形にする道具がないという課題があります。このアプリでは、断片的な記憶をその場で書き留め、音楽という形にまとめることで、記憶を残し、あとから見返せるようにします。</p></div></div>
+    <div class="sec"><span class="label">一言でいうと</span>
+      <div class="g2">
+        <div class="card"><h3>書く</h3><p>起動してすぐ全画面で書ける。閉じると自動で保存。</p></div>
+        <div class="card"><h3>並べる</h3><p>音数と韻をもとに、1番・2番・サビへ自動で配置。</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 3 テーマ・ユーザー -->
+<section class="page">
+  <header class="ph"><h2>テーマ「記憶」と想定ユーザー</h2><span class="no">03 / 08</span></header>
+  <div class="pb">
+    <div class="sec"><span class="label">テーマ「記憶」との関係</span>
+      <div class="card"><p>音楽は、聴いた時期の記憶と強く結びつくメディアです。このアプリはその関係を逆向きにたどり、曲から記憶を思い出すのではなく、<b>記憶から曲をつくります</b>。歌詞の一行一行がいつの記憶から生まれたかをたどれる仕組みにより、「記憶と音楽の結びつき」を体験として表現します。</p></div></div>
+    <div class="sec"><span class="label">記憶の出どころ</span>
+      <div class="card">
+        <p style="margin-bottom:2mm">歌詞の各行には、元になったメモの日付が付きます。曲詳細では、その曲になった記憶の日付が一覧で見られます。</p>
+        <div style="display:flex;gap:6mm;align-items:center">
+          <div style="flex:1">
+            <div style="font-size:10pt;line-height:2.1"><span class="label" style="margin-bottom:1mm">サビ</span><br>名前を呼ばれただけで<br>心臓がうるさくな<span class="rhy">るよ</span></div>
+            <p class="note" style="margin-top:1.5mm">この2行 → 2026.11.09 のメモから</p>
+          </div>
+          <div style="flex:1">
+            <table style="border-spacing:0 1mm;font-size:9pt"><tr><td style="width:auto;border-radius:3mm 0 0 3mm;background:var(--sub)">2026.11.16</td><td style="border-radius:0 3mm 3mm 0">帰り道、信号が…</td></tr>
+            <tr><td style="width:auto;border-radius:3mm 0 0 3mm;background:var(--sub)">2026.11.09</td><td style="border-radius:0 3mm 3mm 0">名前を呼ばれた…</td></tr>
+            <tr><td style="width:auto;border-radius:3mm 0 0 3mm;background:var(--sub)">2026.10.28</td><td style="border-radius:0 3mm 3mm 0">改札の前で手を…</td></tr></table>
+          </div>
+        </div>
+      </div></div>
+    <div class="sec"><span class="label">想定ユーザー</span>
+      <div class="g2">
+        <div class="card"><h3>主に自分自身</h3><p>浮かんだ言葉を歌詞として書きためてきた、私自身が最初のユーザーです。</p></div>
+        <div class="card"><h3>気持ちがあふれる大学生</h3><p>恋愛などで気持ちがあふれ、言葉を一気に書き出したい人。</p></div>
+      </div></div>
+    <div class="sec"><span class="label">使われ方のイメージ</span>
+      <div class="card"><ul>
+        <li>夜、帰り道に浮かんだ言葉をすぐ書き、閉じる。</li>
+        <li>ライブラリで「制作中のフォルダ」の進み具合を眺める。</li>
+        <li>メモが溜まったら「一曲にする」。並んだ歌詞を整え、ジャケットをつくる。</li>
+        <li>完成した曲を、アルバムのようにあとから見返す。</li>
+      </ul></div></div>
+  </div>
+</section>
+
+<!-- 4 画面構成 -->
+<section class="page">
+  <header class="ph"><h2>画面構成と遷移</h2><span class="no">04 / 08</span></header>
+  <div class="pb" style="padding-bottom:5mm">
+    <div class="sec"><span class="label">画面遷移</span>
+      <div class="flow"><span>起動</span><i>→</i><span>書く画面</span><i>→</i><span>ライブラリ</span><i>→</i><span>フォルダ詳細</span><i>→</i><span>作詞画面</span><i>→</i><span>ジャケット作成</span><i>→</i><span>曲詳細</span><i>→</i><span>アルバム（将来）</span></div></div>
+    <div class="sec" style="margin-top:5mm">
+      <div class="strip">
+        <figure><img class="shot" src="img/write.png" alt=""><figcaption>1 書く</figcaption></figure>
+        <figure><img class="shot" src="img/library.png" alt=""><figcaption>2 ライブラリ</figcaption></figure>
+        <figure><img class="shot" src="img/folder.png" alt=""><figcaption>3 フォルダ詳細</figcaption></figure>
+        <figure><img class="shot" src="img/lyrics.png" alt=""><figcaption>4 作詞</figcaption></figure>
+        <figure><img class="shot" src="img/cover.png" alt=""><figcaption>5 ジャケット</figcaption></figure>
+        <figure><img class="shot" src="img/song.png" alt=""><figcaption>6 曲詳細</figcaption></figure>
+      </div></div>
+    <div class="sec" style="margin-top:6mm"><div class="g2" style="gap:3mm">
+      <div class="card" style="padding:3.5mm 4.5mm"><h3>1 書く画面</h3><ul><li>起動するとすぐ開く、ヘッダーなしの全画面入力</li><li>保存先フォルダの選択、左下に行数と音数</li><li>閉じると自動で保存</li></ul></div>
+      <div class="card" style="padding:3.5mm 4.5mm"><h3>2 ライブラリ（ホーム）</h3><ul><li>最近の曲をジャケットで横に並べて表示</li><li>制作中のフォルダと進み具合、アルバム一覧</li><li>書く画面へ戻るボタン</li></ul></div>
+      <div class="card" style="padding:3.5mm 4.5mm"><h3>3 フォルダ詳細</h3><ul><li>曲になる前の記憶の置き場</li><li>メモカードを時系列で一覧、メモ数と総音数</li><li>「一曲にする」ボタン</li></ul></div>
+      <div class="card" style="padding:3.5mm 4.5mm"><h3>4 作詞画面</h3><ul><li>1番・2番・サビの枠、行ごとの音数</li><li>韻の候補の強調、ドラッグで行の入れ替え</li><li>各行の元メモの表示</li></ul></div>
+      <div class="card" style="padding:3.5mm 4.5mm"><h3>5 ジャケット作成</h3><ul><li>背景の色、図形（まる・さんかく・しかく）、図形の色の選択</li><li>曲名とアーティスト名の入力</li></ul></div>
+      <div class="card" style="padding:3.5mm 4.5mm"><h3>6 曲詳細（歌詞カード）</h3><ul><li>ジャケットと歌詞全文の表示、元メモの日付一覧</li><li>共有から画像保存・テキストコピー</li></ul></div>
+      <div class="card" style="padding:3.5mm 4.5mm"><h3>7 アルバム（将来の機能）</h3><ul><li>複数の曲をまとめて表示、アルバムジャケット</li><li>曲順の設定</li></ul></div>
+      <div class="card" style="padding:3.5mm 4.5mm"><h3>8 設定</h3><ul><li>アーティスト名、ダークモード</li><li>プライバシーポリシー、利用規約</li><li>ログアウト、アカウントの削除</li></ul></div>
+    </div></div>
+  </div>
+</section>
+
+<!-- 5 機能一覧 -->
+<section class="page tight">
+  <header class="ph"><h2>機能一覧</h2><span class="no">05 / 08</span></header>
+  <div class="pb">
+    <div class="sec"><span class="label">必須機能</span>
+      <div class="g2" style="gap:3mm">
+        <div class="card"><h3>すぐ書ける入力</h3><p>起動直後に入力画面を表示し、閉じると自動で保存します。</p></div>
+        <div class="card"><h3>フォルダ管理</h3><p>「誰の・何の曲か」の単位でメモをためます。</p></div>
+        <div class="card"><h3>断片化</h3><p>改行や句読点でメモを行単位に分けます。</p></div>
+        <div class="card"><h3>音数カウント</h3><p>各行のモーラ数を表示します。「きゃ」で1拍、「っ」「ー」「ん」も1拍と数える、歌のリズムの単位です。</p></div>
+        <div class="card"><h3>自動配置</h3><p>断片を1番・2番・サビの枠へ自動で並べます。</p></div>
+        <div class="card"><h3>手動調整</h3><p>ドラッグで行を入れ替える、編集する、削除することができます。</p></div>
+        <div class="card"><h3>韻の候補</h3><p>行末の母音がそろう行どうしを強調します。</p></div>
+        <div class="card"><h3>ジャケット作成</h3><p>色と図形（まる・さんかく・しかく）を組み合わせて作ります。画像生成AIは使いません。</p></div>
+        <div class="card" style="grid-column:span 2"><h3>ライブラリ表示</h3><p>完成した曲をジャケットで一覧にします。</p></div>
+      </div></div>
+    <div class="sec"><span class="label" style="background:var(--sub);border:.5mm solid var(--ink)">拡張機能</span>
+      <div class="g2" style="gap:3mm">
+        <div class="card"><h3>アルバム化（将来の機能）</h3><p>複数の曲を1枚のアルバムにまとめます。</p></div>
+        <div class="card"><h3>記憶の出どころ表示</h3><p>歌詞の各行がいつのメモから来たかをたどれます。</p></div>
+        <div class="card"><h3>書いた日カレンダー（将来の機能）</h3><p>書き続けた日数を見える形にし、毎日開く理由をつくります。</p></div>
+        <div class="card"><h3>共有・書き出し</h3><p>曲詳細の共有から、OS標準の共有で画像として保存、またはテキストとしてコピーします。</p></div>
+        <div class="card" style="grid-column:span 2"><h3>ダークモード</h3><p>設定から画面の明るさを切り替えます。</p></div>
+      </div></div>
+  </div>
+</section>
+
+<!-- 6 歌詞化ロジック -->
+<section class="page">
+  <header class="ph"><h2>歌詞化ロジック</h2><span class="no">06 / 08</span></header>
+  <div class="pb">
+    <div style="display:grid;grid-template-columns:1fr 62mm;gap:8mm;align-items:start">
+      <div>
+        <div class="sec"><span class="label">自作・アプリ内で完結</span>
+          <div class="card">
+            <div class="step"><span class="n">1</span><div><b>メモを行に分ける</b>改行と句読点で分け、行の候補をつくります。</div></div>
+            <div class="step"><span class="n">2</span><div><b>音数を数える</b>オープンソースの形態素解析ライブラリで読みを取得し、各行のモーラ数を数えます。</div></div>
+            <div class="step"><span class="n">3</span><div><b>枠へ配置する</b>繰り返し出てくる言葉を含む行をサビの候補に。音数が近い行どうしを対に。書いた日付の順に、1番と2番へ振り分けます。</div></div>
+            <div class="step"><span class="n">4</span><div><b>韻を探す</b>行末の母音を比べ、韻がそろう行を強調します。</div></div>
+          </div></div>
+        <div class="sec"><span class="label">例</span>
+          <div class="card">
+            <p class="note" style="margin-bottom:1.5mm">入力したメモ</p>
+            <p>帰り道、信号が青に変わるのを待っていた。なんでもない時間が、ずっと残っていた。</p>
+            <p class="note" style="margin:2.5mm 0 1.5mm">行に分けて音数を表示</p>
+            <p>帰り道 信号が青に <span class="num hit">12</span><br>変わるのを待って<span class="rhy">いた</span> <span class="num hit">12</span><br>なんでもない時間が <span class="num">11</span><br>ずっと残って<span class="rhy">いた</span> <span class="num">11</span></p>
+            <p class="note" style="margin-top:2mm">音数が近い行は対に、行末の母音がそろう行は下線で示します。</p>
+          </div></div>
+      </div>
+      <div class="sec" style="margin-top:0"><img class="shot" src="img/lyrics.png" alt="作詞画面"><p class="note" style="text-align:center;margin-top:2.5mm">作詞画面。音数バッジ・韻の下線・元メモの日付</p></div>
+    </div>
+    <div class="card" style="margin-top:8mm;background:var(--sub);border-color:var(--ink)">
+      <p class="lead" style="font-size:11pt">外部の生成AI APIは使いません。すべてブラウザの中で動く自作の仕組みで処理します。</p></div>
+  </div>
+</section>
+
+<!-- 7 デザイン方針 -->
+<section class="page">
+  <header class="ph"><h2>デザイン方針</h2><span class="no">07 / 08</span></header>
+  <div class="pb">
+    <div class="sec"><span class="label">雰囲気</span>
+      <div class="g2"><div class="card"><h3>ポップでかわいい、毎日開きたくなる</h3><p>音楽アプリのようにジャケットが主役。ボタンと数字だけカセットのキー風に立体感を出し、カードは淡い枠で目に優しく。</p></div>
+      <div class="card"><h3>起動時と、ホーム</h3><p>起動時は iPhone のジャーナルアプリのように、開いてすぐ書ける。ホームは Apple Music のライブラリのように、ジャケットが並ぶ。</p></div></div></div>
+    <div class="sec"><span class="label">カラー</span>
+      <div class="sw">
+        <div><i style="background:#FF7A2F"></i><p>メイン<small>#FF7A2F</small></p></div>
+        <div><i style="background:#FFD9BF"></i><p>サブ<small>#FFD9BF</small></p></div>
+        <div><i style="background:#FFF6EE"></i><p>背景<small>#FFF6EE</small></p></div>
+        <div><i style="background:#3A2418"></i><p>文字<small>#3A2418</small></p></div>
+        <div><i style="background:#8A5A3C"></i><p>補足文字<small>#8A5A3C</small></p></div>
+      </div>
+      <p class="note" style="margin-top:2.5mm">オレンジ地の文字は白ではなくこげ茶（約5.6:1）。白文字だと約2.6:1で読みにくいため。</p></div>
+    <div class="sec"><span class="label">ヘッダーの決まり</span>
+      <div class="g2">
+        <div class="card" style="padding:0;overflow:hidden"><div style="background:var(--main);padding:4mm 5mm;border-bottom:1mm solid var(--ink)"><span style="font-size:14pt;font-weight:800">ライブラリ</span><br><span style="font-size:8pt;font-weight:800">ライブラリ・フォルダ・作詞・ジャケット・曲詳細</span></div><p style="padding:3mm 5mm 4mm">オレンジ地＋こげ茶文字＋下に濃い線。全画面でそろえる。</p></div>
+        <div class="card" style="padding:0;overflow:hidden"><div style="background:var(--ink);color:var(--bg);padding:4mm 5mm"><span style="font-size:14pt;font-weight:800">書く</span><br><span style="font-size:8pt;color:var(--sub);font-weight:800">ヘッダーなしの全画面入力</span></div><p style="padding:3mm 5mm 4mm">黒地。起動してすぐ書けるよう、ヘッダーは置かない。</p></div>
+      </div></div>
+    <div class="sec"><span class="label">部品</span>
+      <div class="card" style="display:flex;gap:7mm;align-items:center;flex-wrap:wrap">
+        <span class="btnlike">♪ 一曲にする</span><span class="num hit">13</span><span class="num">11</span><span class="label">サビ</span><span class="rhy">いた</span>
+        <p class="note" style="flex:1;min-width:50mm">ボタン＝枠＋下の影／音数＝枠付きバッジ／対の行＝オレンジ／韻＝下線</p></div></div>
+    <div class="sec" style="display:grid;grid-template-columns:34mm 1fr;gap:6mm;align-items:center">
+      <div class="card" style="text-align:center;padding:4mm"><img src="../assets/logo.svg" alt="" style="width:20mm;display:block;margin:0 auto 2mm"><span class="logotype" style="font-size:12pt">メモ<b>歌詞</b></span></div>
+      <div><span class="label" style="margin-bottom:2mm">ロゴとフォント</span>
+        <p style="font-size:9.5pt">ロゴは「波形ノート」。アイコン全体が角の折れたメモ用紙で、文字の行が音の波形に変わっていく形です。ロゴタイプは「メモ」のあとにオレンジの「歌詞」。フォントは M PLUS Rounded 1c。</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 8 制作方針・応募・スケジュール -->
+<section class="page tight">
+  <header class="ph"><h2>制作方針と応募</h2><span class="no">08 / 08</span></header>
+  <div class="pb">
+    <div class="sec"><span class="label">制作方針</span>
+      <div class="card"><ul>
+        <li>形態：スマートフォン表示を前提にしたWebアプリ</li>
+        <li>プロトタイプ：検証用としてAIで作成します</li>
+        <li>課題版・応募版：UIもロジックも自分でゼロから書き直します</li>
+        <li>UIには生成AIを使いません</li>
+      </ul></div></div>
+    <div class="sec"><span class="label">応募情報</span>
+      <table>
+        <tr><td>コンテスト</td><td>SEIKA AWARD 2027（京都精華大学）</td></tr>
+        <tr><td>テーマ</td><td>記憶</td></tr>
+        <tr><td>応募期間</td><td>2026年12月1日〜2027年1月14日 17:00</td></tr>
+        <tr><td>部門</td><td>メディア部門（プログラミング作品）または授業作品部門</td></tr>
+        <tr><td>規定</td><td>生成AIツールを使用した作品は応募不可</td></tr>
+      </table></div>
+    <div class="sec"><span class="label">スケジュール</span>
+      <table>
+        <tr><td>11/16〜11/22</td><td>主催者への問い合わせ、企画書の作成、講師とのすり合わせ</td></tr>
+        <tr><td>11/23〜12/6</td><td>プロトタイプ作成、歌詞化ロジックの検証</td></tr>
+        <tr><td>12/7〜1/4</td><td>本番版の自作実装</td></tr>
+        <tr><td>1/5〜1/10</td><td>仕上げ、デモ動画と説明資料の作成</td></tr>
+        <tr><td>1/11〜1/14</td><td>予備期間、提出</td></tr>
+      </table></div>
+    <div class="sec"><span class="label" style="background:var(--sub);border:.5mm solid var(--ink)">確認中の事項</span>
+      <div class="g2">
+        <div class="card"><h3>主催者への問い合わせ</h3><p>生成AIの規定の範囲、応募部門、提出形式、権利の扱い。</p></div>
+        <div class="card"><h3>担当講師との確認</h3><p>応募部門、授業の課題と応募作品を同一にしてよいか。</p></div>
+        <div class="card" style="grid-column:span 2"><h3>アカウント機能</h3><p>設定にログアウトとアカウント削除を置いているが、ブラウザ内で完結する方針との関係（ログインの要否、データの保存先）を決める。</p></div>
+      </div></div>
+  </div>
+</section>
+
+</body></html>

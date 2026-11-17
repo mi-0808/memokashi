@@ -1,0 +1,47 @@
+<!doctype html><html lang="ja"><head><meta charset="utf-8"><title>T</title><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="../base.css"><link rel="stylesheet" href="style.css">
+<style>
+.prev{margin:4px auto 18px;width:240px}
+.prev .jk{width:240px;height:240px;border-radius:18px;box-shadow:0 10px 26px rgba(138,90,60,.22)}
+.prev .cap{margin-top:12px;text-align:center}
+.prev .cap b{display:block;font-size:17px;font-weight:800}
+.prev .cap span{font-size:12px;font-weight:700;color:var(--sub-ink)}
+.grp{padding:0 22px 16px}
+.grp .label{display:block;margin-bottom:10px}
+.sw{display:flex;gap:12px;flex-wrap:wrap}
+.sw button{width:48px;height:48px;border-radius:14px;box-shadow:inset 0 0 0 2px rgba(58,36,24,.08)}
+.sw button.on{box-shadow:0 0 0 3px #fff,0 0 0 5px var(--main)}
+.sh{display:flex;gap:12px}
+.sh button{flex:1;height:64px;border-radius:14px;background:#fff;box-shadow:inset 0 0 0 2px #F0E3D7;position:relative;overflow:hidden}
+.sh button.on{box-shadow:inset 0 0 0 3px var(--main)}
+.sh i{position:absolute;display:block}
+.inp{width:100%;height:50px;border-radius:14px;background:#fff;box-shadow:inset 0 0 0 2px #F0E3D7;padding:0 14px;
+  display:flex;align-items:center;font-size:15px;font-weight:700}
+.inp+.inp{margin-top:10px}
+.inp em{font-style:normal;color:#C8B2A2;font-weight:700}
+.foot{flex:none;padding:12px 22px 26px;border-top:1px solid #F0E3D7;background:#FFFDFB}
+.foot .pill{width:100%;height:52px;border-radius:26px;font-size:16px}
+</style></head><body>
+<div class="screen">
+  <div class="statusbar"><span>9:41</span><span class="right"><i></i><i style="width:10px"></i></span></div>
+  <div class="hd"><div style="display:flex;align-items:center;gap:6px"><button class="back tap">‹</button><h1>ジャケット</h1></div>
+    <button class="tap" style="font-size:13px;font-weight:800;color:var(--sub-ink)">写真を使う</button></div>
+  <div class="body">
+    <div class="prev"><div class="jk" style="background:#FF7A2F">
+      <span style="width:150px;height:150px;border-radius:50%;background:#FFD9BF;left:45px;top:34px"></span>
+      <span style="width:240px;height:26px;background:#FFF6EE;left:0;bottom:46px"></span></div>
+      <div class="cap"><b>青信号を待つ時間</b><span>ミナト</span></div></div>
+    <div class="grp"><span class="label">色</span><div class="sw">
+      <button class="on" style="background:#FF7A2F"></button><button style="background:#FFD9BF"></button>
+      <button style="background:#3A2418"></button><button style="background:#8A5A3C"></button>
+      <button style="background:#FFF6EE"></button></div></div>
+    <div class="grp"><span class="label">図形パターン</span><div class="sh">
+      <button class="on"><i style="width:34px;height:34px;border-radius:50%;background:#FF7A2F;left:15px;top:15px"></i></button>
+      <button><i style="width:0;height:0;border-left:20px solid transparent;border-right:20px solid transparent;border-bottom:34px solid #FF7A2F;left:22px;top:15px"></i></button>
+      <button><i style="width:46px;height:8px;background:#FF7A2F;left:13px;top:20px"></i><i style="width:46px;height:8px;background:#FFD9BF;left:13px;top:36px"></i></button>
+      <button><i style="width:28px;height:28px;background:#FF7A2F;left:8px;top:18px"></i><i style="width:28px;height:28px;background:#FFD9BF;right:8px;top:18px;border-radius:50%"></i></button>
+    </div></div>
+    <div class="grp"><span class="label">曲名とアーティスト名</span>
+      <div class="inp">青信号を待つ時間</div><div class="inp"><em>アーティスト名</em>　ミナト</div></div>
+  </div>
+  <div class="foot"><button class="pill tap">この曲を保存する</button></div>
+</div></body></html>

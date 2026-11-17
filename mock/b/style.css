@@ -1,0 +1,25 @@
+/* B案 ミュージックプレイヤー — オレンジのヘッダー、大きなジャケット、波形モチーフ */
+body{background:var(--bg)}
+.top{flex:none;background:var(--main);color:#fff;padding:0 20px 18px}
+.top .statusbar{color:#fff;padding:0;height:44px}
+.top .ttl{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;padding-top:6px}
+.top h1{font-size:26px;font-weight:800;letter-spacing:-.01em}
+.top .sub{font-size:12px;font-weight:700;opacity:.9;margin-top:4px}
+.top .back{font-size:22px;font-weight:800;width:44px;height:44px;margin-left:-12px;color:#fff}
+.chip{height:36px;padding:0 14px;border-radius:18px;background:rgba(255,255,255,.22);color:#fff;font-size:12px;font-weight:800;
+  display:inline-flex;align-items:center}
+.btn{height:50px;padding:0 22px;border-radius:14px;background:var(--main);color:#fff;font-weight:800;font-size:15px;
+  display:inline-flex;align-items:center;justify-content:center;gap:8px}
+.btn.alt{background:#fff;color:var(--main);box-shadow:inset 0 0 0 2px var(--sub)}
+.btn.dark{background:var(--ink)}
+.card{background:#fff;border-radius:16px;box-shadow:0 2px 10px rgba(138,90,60,.1)}
+.label{font-size:12px;font-weight:800;color:var(--sub-ink);letter-spacing:.06em}
+/* 波形 */
+.wave{display:flex;align-items:flex-end;gap:3px;height:28px}
+.wave i{display:block;width:4px;border-radius:2px;background:currentColor;opacity:.85}
+.tabs{flex:none;height:70px;display:flex;background:var(--ink)}
+.tabs a{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;font-size:11px;font-weight:800;color:rgba(255,246,238,.55)}
+.tabs a.on{color:#fff}
+.tabs .ic{width:20px;height:20px;border-radius:6px;background:currentColor}
+.tabs .ic.c{border-radius:50%}
+.tabs .ic.t{border-radius:3px;transform:rotate(45deg)}

@@ -1,0 +1,33 @@
+<!doctype html><html lang="ja"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>メモ歌詞 画面モック比較</title>
+<link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--s:.66}
+*{box-sizing:border-box;margin:0}
+body{font-family:"M PLUS Rounded 1c",sans-serif;background:#FFF6EE;color:#3A2418;padding:28px 32px 60px}
+header{display:flex;align-items:center;gap:14px;margin-bottom:6px}
+header img{width:44px}
+h1{font-size:24px;font-weight:800}h1 b{color:#FF7A2F}
+.lead{font-size:13px;color:#8A5A3C;font-weight:700;margin-bottom:28px}
+section{margin-bottom:44px}
+.hd{display:flex;align-items:baseline;gap:14px;margin-bottom:14px}
+.hd h2{font-size:20px;font-weight:800}
+.hd p{font-size:13px;color:#8A5A3C;font-weight:700}
+.rail{display:flex;gap:22px;overflow-x:auto;padding:4px 4px 18px}
+figure{flex:none;width:calc(390px*var(--s))}
+.fr{width:calc(390px*var(--s));height:calc(844px*var(--s));border-radius:26px;overflow:hidden;background:#fff;
+  box-shadow:0 0 0 6px #3A2418,0 10px 24px rgba(58,36,24,.2)}
+.fr iframe{width:390px;height:844px;border:0;transform:scale(var(--s));transform-origin:0 0}
+figcaption{margin-top:14px;font-size:12px;font-weight:800;color:#8A5A3C;text-align:center}
+figcaption a{color:#FF7A2F}
+</style></head><body>
+<header><img src="../assets/logo.svg" alt=""><h1>メモ<b>歌詞</b> 画面モック比較</h1></header>
+<p class="lead">3案 × 6画面（390×844）。各画面の下のリンクで実寸表示。</p>
+<div id="out"></div>
+<script>
+const S=[["write","1 書く"],["library","2 ライブラリ"],["folder","3 フォルダ詳細"],["lyrics","4 作詞"],["cover","5 ジャケット作成"],["song","6 曲詳細"]];
+const P=[["a","A案 ノートブック","紙のメモ帳の質感。オレンジは差し色"],["b","B案 ミュージックプレイヤー","オレンジのヘッダーと波形。音楽アプリの文法"],["c","C案 カセットポップ","太い枠線とベタ塗り。レトロでカラフル"],["d","D案 統合（Bベース＋Cのボタン・数字、曲詳細・ジャケットはC）","Bをベースに、ボタン・音数バッジをC風に。枠と影は絞ってコントラストを抑える"]];
+out.innerHTML=P.map(([k,n,d])=>`<section id="${k}"><div class="hd"><h2>${n}</h2><p>${d}</p></div><div class="rail">`+
+ (k==="d"?[["splash","0 起動"],...S,["settings","8 設定"]]:S).map(([f,t])=>`<figure><div class="fr"><iframe src="${k}/${f}.html?v=${Date.now()}" loading="lazy" title="${n} ${t}"></iframe></div><figcaption>${t}　<a href="${k}/${f}.html" target="_blank">実寸で開く</a></figcaption></figure>`).join("")+`</div></section>`).join("");
+</script></body></html>

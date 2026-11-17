@@ -1,0 +1,47 @@
+@import url("palette.css");
+/* D案 統合 — B(ミュージックプレイヤー)ベース + C(カセットポップ)のボタン/数字バッジ。
+   C の「全面に黒枠」は避け、枠と影はボタン・バッジだけ。カードは淡い枠。
+   オレンジ地の上の文字は白だとコントラスト不足(約2.6:1)なのでこげ茶にする */
+body{background:var(--bg)}
+.top{flex:none;background:var(--main);color:var(--ink);padding:0 20px 16px;border-bottom:3px solid var(--ink)}
+.top .statusbar{padding:0}
+.top .ttl{display:flex;align-items:flex-end;justify-content:space-between;gap:12px;padding-top:4px}
+.top h1{font-size:25px;font-weight:800}
+.top .sub{font-size:12px;font-weight:800;margin-top:3px;color:var(--ink)}
+.back{width:44px;height:44px;margin-left:-12px;font-size:22px;font-weight:800}
+.chip{height:36px;padding:0 14px;border-radius:18px;background:var(--bg);border:2px solid var(--ink);font-size:12px;font-weight:800;display:inline-flex;align-items:center}
+/* ボタン: Cのキー風。枠2px+下に影 */
+.btn{height:50px;padding:0 20px;border-radius:14px;background:var(--main);color:var(--ink);font-weight:800;font-size:15px;
+  border:2px solid var(--ink);box-shadow:0 4px 0 var(--ink);display:inline-flex;align-items:center;justify-content:center;gap:8px;white-space:nowrap}
+.btn.alt{background:#fff}
+/* カード: 淡い枠 */
+.card{background:#fff;border:2px solid var(--line);border-radius:16px}
+.label{display:inline-block;font-size:11px;font-weight:800;letter-spacing:.08em;background:var(--main);color:var(--ink);padding:3px 10px;border-radius:8px}
+.num{display:inline-block;min-width:44px;text-align:center;font-size:12px;font-weight:800;border:2px solid var(--ink);border-radius:9px;padding:3px 7px;background:var(--bg)}
+.num.hit{background:var(--main)}
+.wave{display:flex;align-items:flex-end;gap:3px}.wave i{display:block;width:4px;border-radius:2px;background:currentColor}
+.tabs{flex:none;height:70px;display:flex;background:var(--bg);border-top:2px solid var(--ink)}
+.tabs a{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;font-size:11px;font-weight:800;color:var(--sub-ink)}
+.tabs a.on{color:var(--ink)}
+.tabs .ic{width:20px;height:20px;border:2px solid currentColor;border-radius:6px}
+.tabs .ic.c{border-radius:50%}.tabs .ic.t{transform:rotate(45deg)}
+.tabs a.on .ic{background:var(--main)}
+.foot{flex:none;padding:12px 20px 26px;background:var(--bg);border-top:2px solid var(--line)}
+
+/* 黒ヘッダー（作る系：書く・作詞）。A案のロゴ+ひとこと+右ボタン構成。
+   黒地ならロゴの「歌詞」をオレンジのまま読める(約5.5:1) */
+.top.dark{background:var(--ink);color:var(--bg);border-bottom-color:var(--main)}
+.top.dark .statusbar{color:var(--bg)}
+.top.dark .sub{color:var(--sub)}
+.top.dark .back{color:var(--bg)}
+.top.dark h1{font-size:22px}
+.top.dark .chip{background:var(--main);border-color:var(--main)}
+.top.dark .seg{display:flex;gap:6px;padding:12px 0 0}
+.top.dark .seg button{flex:1;height:44px;border-radius:12px;border:2px solid var(--sub);background:transparent;color:var(--bg);font-size:13px;font-weight:800}
+.top.dark .seg button.on{background:var(--main);border-color:var(--main);color:var(--ink)}
+.chip{white-space:nowrap}
+/* 小さい文字のコントラスト補正：オレンジ地のサブ文は濃茶(4.4:1)→こげ茶(5.6:1) */
+.top .sub{color:var(--ink)}
+.top.dark .sub{color:var(--sub)}
+/* ボタンになるチップは44px */
+.top.dark .chip{height:44px}

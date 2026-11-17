@@ -1,0 +1,37 @@
+<!doctype html><html lang="ja"><head><meta charset="utf-8"><title>D 設定</title><link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700;800&display=swap" rel="stylesheet"><link rel="stylesheet" href="../base.css"><link rel="stylesheet" href="style.css"><style>
+.brand{margin:20px 20px 4px;padding:22px 18px;text-align:center;background:var(--ink);color:var(--bg);border-radius:16px;border:2px solid var(--ink)}
+.brand img{width:56px;height:56px;display:block;margin:0 auto 10px}
+.brand h2{font-size:26px}
+.brand p{font-size:12px;font-weight:800;color:var(--sub);margin-top:4px}
+.sec{padding:22px 20px 8px}
+.card.f{margin:0 20px 10px;padding:14px 16px}
+.card.f .k{font-size:11px;font-weight:800;color:var(--sub-ink);margin-bottom:6px}
+.inp{height:48px;border:2px solid var(--ink);border-radius:12px;background:var(--bg);padding:0 14px;display:flex;align-items:center;font-size:15px;font-weight:800}
+.card.f p{font-size:12px;font-weight:700;color:var(--sub-ink);line-height:1.7;margin-top:8px}
+.two{display:flex;gap:10px;margin-top:2px}
+.two .btn{flex:1}
+.tg{width:54px;height:32px;border:2px solid var(--ink);border-radius:16px;background:var(--bg);position:relative;flex:none}
+.tg i{position:absolute;left:3px;top:3px;width:22px;height:22px;border-radius:50%;background:var(--ink)}
+.list{margin:0 20px 10px;padding:0 16px}
+.row{display:flex;align-items:center;justify-content:space-between;min-height:54px;font-size:15px;font-weight:800}
+.row+.row{border-top:2px dashed var(--line)}
+.row .ch{color:var(--sub-ink);font-size:20px;font-weight:800}
+.row small{display:block;font-size:11px;font-weight:700;color:var(--sub-ink)}
+.acts{margin:0 20px 30px;display:flex;flex-direction:column;gap:12px}
+.acts .btn{width:100%}
+.danger{height:50px;border:2px solid var(--danger);border-radius:14px;color:var(--danger);font-weight:800;font-size:15px;background:#fff}
+</style></head><body><div class="screen">
+<div class="top"><div class="statusbar"><span>9:41</span><span class="right"><i></i><i style="width:10px"></i></span></div><div class="ttl"><div><h1>設定</h1><div class="sub">表示とアカウント</div></div></div></div>
+<div class="body">
+<div class="brand"><img src="../../assets/logo.svg" alt=""><h2 class="logotype">メモ<b>歌詞</b></h2><p>バージョン 0.1 ／ プロトタイプ</p></div>
+<div class="sec"><span class="label">アーティスト名</span></div>
+<div class="card f"><div class="k">ジャケットと曲詳細に表示されます</div><div class="inp">ミナト</div></div>
+<div class="sec"><span class="label">表示</span></div>
+<div class="card list"><div class="row"><span>ダークモード<small>オフ</small></span><span class="tg" role="switch" aria-checked="false"><i></i></span></div></div>
+<div class="sec"><span class="label">情報</span></div>
+<div class="card list"><div class="row"><span>プライバシーポリシー</span><span class="ch">›</span></div><div class="row"><span>利用規約</span><span class="ch">›</span></div></div>
+<div class="sec"><span class="label">アカウント</span></div>
+<div class="acts"><button class="btn alt tap">ログアウト</button><button class="danger tap">アカウントを削除</button></div>
+</div>
+<nav class="tabs"><a><span class="ic"></span>ライブラリ</a><a><span class="ic c"></span>フォルダ</a><a><span class="ic t"></span>カレンダー</a><a class="on"><span class="ic" style="border-radius:10px"></span>設定</a></nav>
+</div></body></html>

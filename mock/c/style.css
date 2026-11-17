@@ -1,0 +1,24 @@
+/* C案 カセットポップ — 太いボーダー、ベタ塗りタイル、レトロなステッカー感 */
+body{background:var(--sub)}
+.hd{flex:none;background:var(--bg);border-bottom:3px solid var(--ink);padding:0 18px 14px}
+.hd .statusbar{padding:0}
+.hd .ttl{display:flex;align-items:flex-end;justify-content:space-between;gap:10px;padding-top:4px}
+.hd h1{font-size:22px;font-weight:800;letter-spacing:-.02em}
+.hd .sub{font-size:11px;font-weight:800;color:var(--sub-ink);margin-top:3px}
+.hd .back{width:44px;height:44px;margin-left:-12px;font-size:22px;font-weight:800}
+.box{background:#fff;border:3px solid var(--ink);border-radius:14px;box-shadow:4px 4px 0 var(--ink)}
+.btn{height:50px;padding:0 20px;border-radius:12px;background:var(--main);color:#fff;font-weight:800;font-size:15px;
+  border:3px solid var(--ink);box-shadow:4px 4px 0 var(--ink);display:inline-flex;align-items:center;justify-content:center;gap:8px}
+.btn.alt{background:#fff;color:var(--ink)}
+.sticker{display:inline-flex;align-items:center;height:30px;padding:0 12px;border-radius:15px;border:3px solid var(--ink);
+  background:var(--sub);font-size:11px;font-weight:800}
+.label{font-size:11px;font-weight:800;letter-spacing:.1em;color:var(--ink);background:var(--main);color:#fff;
+  padding:3px 9px;border-radius:7px;display:inline-block}
+.body{background:var(--bg)}
+.tabs{flex:none;height:70px;display:flex;background:var(--bg);border-top:3px solid var(--ink)}
+.tabs a{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;font-size:11px;font-weight:800;color:var(--sub-ink)}
+.tabs a.on{color:var(--ink)}
+.tabs .ic{width:20px;height:20px;border:3px solid currentColor;border-radius:5px}
+.tabs .ic.c{border-radius:50%}
+.tabs .ic.t{transform:rotate(45deg)}
+.tabs a.on .ic{background:var(--main);border-color:var(--ink)}
