@@ -1,6 +1,6 @@
 # CLAUDE.md — メモ歌詞
 
-このファイルは**どう作業するか**を定める。**何をどう作るか**は [企画書.md](企画書.md) が唯一の真実。UI の見た目は確定済みの D 案（`mock/d/`）が唯一の真実。作業前に両方読むこと。
+このファイルは**どう作業するか**を定める。**何をどう作るか**は [企画書.md](企画書.md) が唯一の真実。UI の見た目は確定済みの D 案（`prototype/mock/d/`）が唯一の真実。作業前に両方読むこと。
 
 ---
 
@@ -11,9 +11,10 @@
 | | 場所 | 役割 |
 |---|---|---|
 | 企画 | `企画書.md` | コンセプト・画面構成・機能・歌詞化ロジック・スケジュール |
-| 確定 UI | `mock/d/` | D 案。画面の見た目の唯一の真実 |
-| 検討の履歴 | `mock/a` `mock/b` `mock/c` | 比較用の案。D 案が参照しているファイルもある |
-| 提出用資料 | `proposal/` | 企画書の HTML と PDF（D スタイル） |
+| 確定 UI | `prototype/mock/d/` | D 案。画面の見た目の唯一の真実 |
+| 検討の履歴 | `prototype/mock/a` `prototype/mock/b` `prototype/mock/c` | 比較用の案。D 案が参照しているファイルもある |
+| 提出用資料 | `prototype/proposal/` | 企画書の HTML と PDF（D スタイル） |
+| 応募版 | `product/` | ユーザー自身がゼロから書く。今は空 |
 | ロゴ | `assets/logo.svg` | 波形ノート。ユーザー所有の素材なので書き換えない |
 
 ### 最重要の方針
@@ -26,10 +27,10 @@
 
 ### 現状
 
-**検証用プロトタイプ（`app/`）を実装済み**（Vite + React + TypeScript。AI が書いた検証用で、応募版には持ち込まない）。
+**検証用プロトタイプ（`prototype/app/`）を実装済み**（Vite + React + TypeScript。AI が書いた検証用で、応募版には持ち込まない）。
 D 案の UI モックが確定している（0 起動 / 1 書く / 2 ライブラリ / 3 フォルダ詳細 / 4 作詞 / 5 ジャケット / 6 曲詳細 / 8 設定）。以下はまだ存在しない・決まっていない:
 
-- 応募版の実装（ユーザー自身が書く）。プロトタイプの歌詞化ロジックは `app/src/lyrics.ts` に純関数でまとめてある（参照用）
+- 応募版の実装（ユーザー自身が書く）。プロトタイプの歌詞化ロジックは `prototype/app/src/lyrics.ts` に純関数でまとめてある（参照用）
 - アカウント機能（ログアウト・アカウント削除を設定に置いたが、ブラウザ内で完結する方針との関係が未決。企画書 §14）
 - アルバム画面とカレンダー画面。**将来の機能**でモックなし
 - アプリ名の確認（他サービスとの重複を未調査）
@@ -42,7 +43,7 @@ D 案の UI モックが確定している（0 起動 / 1 書く / 2 ライブ�
 
 **未決定。** 決まっているのは次の制約だけ。
 
-プロトタイプ（`app/`）は Vite + React + TypeScript + kuromoji.js。応募版の技術は未決定。決まっているのは次の制約。
+プロトタイプ（`prototype/app/`）は Vite + React + TypeScript + kuromoji.js。応募版の技術は未決定。決まっているのは次の制約。
 
 | 領域 | 決まっていること |
 |---|---|
@@ -58,8 +59,8 @@ D 案の UI モックが確定している（0 起動 / 1 書く / 2 ライブ�
 ## 開発コマンド
 
 ```bash
-# プロトタイプ（app/）
-cd app && npm install      # 辞書(約17MB)を public/dict へコピーする postinstall つき
+# プロトタイプ（prototype/app/）
+cd prototype/app && npm install      # 辞書(約17MB)を public/dict へコピーする postinstall つき
 npm run dev                # http://localhost:5173
 npm run check              # 型チェック + ビルド + テスト。作業完了前に必ず実行
 
@@ -73,22 +74,22 @@ vercel deploy --prod --yes # プロジェクト memokashi-prototype（Minato's p
 
 ```bash
 # モックと企画書をブラウザで見る（ポート 8000）
-python3 -m http.server 8000 --bind 127.0.0.1 --directory ~/Memorhythm
-# → http://localhost:8000/mock/index.html（3案+D案の比較）
-# → http://localhost:8000/proposal/index.html
+python3 -m http.server 8000 --bind 127.0.0.1 --directory .
+# → http://localhost:8000/prototype/mock/index.html（3案+D案の比較）
+# → http://localhost:8000/prototype/proposal/index.html
 ```
 
 ```bash
 # 画面を画像に書き出す（390×844、2倍）
 "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" --headless --disable-gpu --hide-scrollbars \
-  --force-device-scale-factor=2 --window-size=390,844 --screenshot=out.png file://$PWD/mock/d/write.html
+  --force-device-scale-factor=2 --window-size=390,844 --screenshot=out.png file://$PWD/prototype/mock/d/write.html
 
 # 企画書を PDF に書き出す（A4・8ページになること）
 "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" --headless --disable-gpu --no-pdf-header-footer \
-  --virtual-time-budget=8000 --print-to-pdf=proposal/Memorhythm_企画書.pdf file://$PWD/proposal/index.html
+  --virtual-time-budget=8000 --print-to-pdf=prototype/proposal/Memorhythm_企画書.pdf file://$PWD/prototype/proposal/index.html
 ```
 
-> **ブラウザは古い版をキャッシュする。** 変更が見えないときは先にキャッシュを疑う（`mock/index.html` の iframe は URL に値を付けて回避済み）。
+> **ブラウザは古い版をキャッシュする。** 変更が見えないときは先にキャッシュを疑う（`prototype/mock/index.html` の iframe は URL に値を付けて回避済み）。
 
 ---
 
@@ -98,27 +99,31 @@ python3 -m http.server 8000 --bind 127.0.0.1 --directory ~/Memorhythm
 企画書.md            # 企画の唯一の真実
 CLAUDE.md
 assets/logo.svg      # ロゴ（触らない）
-app/                 # 検証用プロトタイプ（src/lyrics.ts が歌詞化、screens/ が各画面）
-mock/
-├── index.html       # 3案+D案の比較ページ（D 案の行は 0 起動〜8 設定）
-├── base.css         # 共通ベース
-├── names.html       # アプリ名の候補の比較
-├── a/ b/ c/         # 検討した案
-└── d/               # 確定 UI
-    ├── palette.css  # 使用色の唯一の置き場
-    ├── style.css    # 部品（.top .btn .card .num .label）
-    ├── header.css   # ヘッダー統一（B 案由来の画面に上書き）
-    └── *.html       # 画面。*-c / *-d / *-plate / *-light などは退避した旧版
-proposal/            # 提出用 HTML と PDF、img/（D 案の画面画像）
+product/             # B：応募版。ユーザー自身がゼロから書く（AI はコードを書かない）
+prototype/           # A：検証用。AI が書いたもの。応募版へコードを持ち込まない
+├── app/             # 検証用プロトタイプ（src/lyrics.ts が歌詞化、screens/ が各画面）
+├── mock/
+│   ├── index.html   # 3案+D案の比較ページ（D 案の行は 0 起動〜8 設定）
+│   ├── base.css     # 共通ベース
+│   ├── names.html   # アプリ名の候補の比較
+│   ├── a/ b/ c/     # 検討した案
+│   └── d/           # 確定 UI
+│       ├── palette.css  # 使用色の唯一の置き場
+│       ├── style.css    # 部品（.top .btn .card .num .label）
+│       ├── header.css   # ヘッダー統一（B 案由来の画面に上書き）
+│       └── *.html       # 画面。*-c / *-d / *-plate / *-light などは退避した旧版
+└── proposal/        # 提出用 HTML と PDF、img/（D 案の画面画像）
 ```
 
-画面を足すときは `mock/d/` に置き、`mock/index.html` の D 案の行に載せる。
+`企画書.md` と `assets/` は A・B 共通なので直下に置く。
+
+画面を足すときは `prototype/mock/d/` に置き、`prototype/mock/index.html` の D 案の行に載せる。
 
 ---
 
 ## デザインのルール（D 案）
 
-- **色は `mock/d/palette.css` の変数だけを使う。** 新しい色を足すときは、用途と理由をそこに書く
+- **色は `prototype/mock/d/palette.css` の変数だけを使う。** 新しい色を足すときは、用途と理由をそこに書く
 - **ヘッダー**：オレンジ地 + こげ茶文字 + 下に濃い線 + タイトル 25px。例外は 2 つだけ — 書く画面（ヘッダーなしの黒い全画面）と曲詳細（戻る・共有の丸ボタンのみ）
 - **オレンジ地の上の文字**：ヘッダーはこげ茶。白は約 2.6:1 で足りない。ボタンの白文字は B 案に合わせて使っているが、直す余地がある
 - **部品**：ボタンは角丸のオレンジ、音数は枠付きバッジ、カードは淡い枠（C 案の黒い太枠・硬い影は目が疲れるので使わない）
@@ -144,9 +149,9 @@ proposal/            # 提出用 HTML と PDF、img/（D 案の画面画像）
 
 ### 2. 変更する
 
-- UI を変えたら、**`企画書.md` と `proposal/`（画像・PDF）まで同期する。** 文面と画面がずれるのが一番多い失敗
+- UI を変えたら、**`企画書.md` と `prototype/proposal/`（画像・PDF）まで同期する。** 文面と画面がずれるのが一番多い失敗
 - 旧版は `*-c.html` などで退避してから置き換える（git でも戻せるが、モックは見比べるために残す）
-- 企画書.md を大きく直す前は `proposal/企画書_更新前.md` のようにバックアップを取る
+- 企画書.md を大きく直す前は `prototype/proposal/企画書_更新前.md` のようにバックアップを取る
 - ユーザーが決めた内容は再提案しない。変える理由が出たときだけ、理由と数値つきで指摘する
 
 ### 3. 検証する
